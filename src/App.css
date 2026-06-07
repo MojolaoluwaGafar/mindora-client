@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+
+@import "tailwindcss";
+/* .hero-gradient {
+  background: conic-gradient(from 180deg at 50% 50%, #C67272 0deg, #FF7A37 59.79deg, #0D9488 180deg, #BCBE56 230.19deg, #DD9C46 315deg, #C67272 360deg);
+  /* -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px); */
+  /* opacity: 0.2; */
+/* }  */
+
+.hero-gradient {
+  background: conic-gradient(
+    from 180deg at 50% 50%, 
+    rgba(198, 114, 114, 0.2) 0deg, 
+    rgba(255, 122, 55, 0.2) 59.79deg, 
+    rgba(13, 148, 136, 0.2) 180deg, 
+    rgba(188, 190, 86, 0.2) 230.19deg, 
+    rgba(221, 156, 70, 0.2) 315deg, 
+    rgba(198, 114, 114, 0.2) 360deg
+  );
+}
+
+.fontCreateRound{
+  font-family: "Crete Round", serif;
+}
+
+.fontDMSans{
+  font-family: "DM Sans", sans-serif;
+}
+
+.fontDiphylleia{
+  font-family: "Diphylleia", serif;
+}
