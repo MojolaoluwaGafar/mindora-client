@@ -12,10 +12,10 @@ export default function Footer() {
             </div>
 
             <div className='flex items-center justify-between gap-10 fontDMSans text-[#747272] text-[18px]'>
-            <Link to=""><p>About</p></Link>
-            <Link to=""><p>How It Works</p></Link>
-            <Link to=""><p>Resources</p></Link>
-            <Link to=""><p>Privacy</p></Link>
+            <a href='#about'>About</a>
+            <a href='#how'>How It Works</a>
+            <Link to="/resources"><p>Resources</p></Link>
+            <Link to="/privacy"><p>Privacy</p></Link>
             </div>
 
             <p className='fontDMSans text-[18px] text-[#747272]'>© 2026 Bolt. All rights reserved.</p>

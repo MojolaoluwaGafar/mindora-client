@@ -38,7 +38,7 @@ export default function HowItIsWorks() {
   ]
 
   return (
-    <div className='w-full bg-[#0D9488]'>
+    <div id='how' className='w-full bg-[#0D9488]'>
       <div className='container flex flex-col items-center mx-auto py-20 px-10'>
         <h1 className='fontCreateRound text-white text-[32px]'>How Mindora Works</h1>
         <p className='text-[18px] text-[#E6E4E4] mb-8'>

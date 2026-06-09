@@ -11,7 +11,7 @@ interface CardProp {
 
 const Card = ({icon, category, heading, subHeading }: CardProp) => {
   return (
-    <div className='bg-[#FFFFFF] border border-[#E6E2E2] rounded-[20px] w-[395px] h-[186px] flex flex-col gap-[18px] px-[23px] py-[26px]'>
+    <div className='bg-[#FFFFFF] border border-[#E6E2E2] rounded-[20px] h-[186px] flex flex-col gap-[18px] px-[23px] py-[26px]'>
       <div className='flex gap-2 items-center'>
       <span className='bg-[#E7FCFA] text-[#054943] h-[36px] w-[36px] text-[16px] flex items-center justify-center' >{icon}</span>
       <span className='text-[16px] text-[#054943] font-semibold'>{category}</span>

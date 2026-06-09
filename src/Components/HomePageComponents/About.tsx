@@ -3,7 +3,7 @@ import img from "../../assets/6af8d428e3af3bd910a1a0e7f5cf6384458e3511 (1).jpg"
 
 export default function About() {
   return (
-    <div className="w-full py-20 px-10">
+    <div id='about' className="w-full py-20 px-10">
       <div className='container mx-auto flex items-center justify-between gap-[73px]'>
         <img src={img} alt="illustration" className="w-[458px] h-[291px] rounded-lg" />
 

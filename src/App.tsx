@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import HomePage from './Pages/HomePage';
 import ChatPage from './Pages/ChatPage';
-
+import Error404 from './Components/Error404';
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aiChat" element={<ChatPage />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>
     </>
