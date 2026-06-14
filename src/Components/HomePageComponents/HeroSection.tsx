@@ -11,7 +11,7 @@ export default function HeroSection() {
 
             <p className="text-[18px] fontDMSans">Chat Anonymously with Mindora for guidance, emotional support and Health-related conversations -Without judgment, without sign-ups.</p>
 
-            <Link to="/aiChat"><button className="bg-[#0D9488] rounded-[31px] text-white w-[267px] h-[55px] fontDMSans" type="button">Start Anonymous Chat</button></Link>
+            <Link to="/talkToMindora"><button className="bg-[#0D9488] rounded-[31px] text-white w-[267px] h-[55px] fontDMSans" type="button">Start Anonymous Chat</button></Link>
         </div>
 
         <img src={heroImg} alt="" />

@@ -6,7 +6,7 @@ export default function Header() {
   const navigate = useNavigate()
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>)=>{
     e.preventDefault();
-    navigate("/aiChat")
+    navigate("/talkToMindora")
   }
   return (
     <div className='bg-white w-full h-[103px] py-[24px] px-10 fontDMSans border-b border-[#F3F2F2]'>
