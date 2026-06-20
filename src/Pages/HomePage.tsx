@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../Components/HomePageComponents/Header'
 import HeroSection from '../Components/HomePageComponents/HeroSection'
 import About from '../Components/HomePageComponents/About'

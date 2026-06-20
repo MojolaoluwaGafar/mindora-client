@@ -1,5 +1,6 @@
 import heroImg from "../../assets/Frame 2121454976.png"
 import { Link } from "react-router"
+
 export default function HeroSection() {
   return (
     <div className="w-full hero-gradient py-20 px-10 flex items-center justify-between">

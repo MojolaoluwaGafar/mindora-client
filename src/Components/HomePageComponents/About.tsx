@@ -1,4 +1,3 @@
-import React from 'react'
 import img from "../../assets/6af8d428e3af3bd910a1a0e7f5cf6384458e3511 (1).jpg"
 
 export default function About() {

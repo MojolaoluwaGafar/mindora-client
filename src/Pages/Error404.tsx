@@ -1,5 +1,6 @@
 import errorImage from "../assets/error404.png"
 import { Link } from 'react-router'
+
 export default function Error404() {
   return (
     <>
