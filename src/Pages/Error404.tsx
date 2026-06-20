@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 export default function Error404() {
   return (
     <>
-       <div className="container mx-auto flex items-center justify-center text-center">
+       <div className="container mx-auto flex items-center justify-center text-center px-10">
         <div>
             <img  className="mx-auto" src={errorImage} alt="error 404" />
             <h2 className="mb-3 text-lg font-semibold">Oh snap!, this is awkward.</h2>

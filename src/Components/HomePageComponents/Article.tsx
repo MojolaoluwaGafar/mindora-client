@@ -11,7 +11,7 @@ interface CardProp {
 
 const Card = ({icon, category, heading, subHeading }: CardProp) => {
   return (
-    <div className='bg-[#FFFFFF] border border-[#E6E2E2] rounded-[20px] h-[186px] flex flex-col gap-[18px] px-[23px] py-[26px]'>
+    <div className='bg-[#FFFFFF] border border-[#E6E2E2] rounded-[20px] lg:h-[186px] flex flex-col gap-[18px] px-[23px] py-[26px]'>
       <div className='flex gap-2 items-center'>
       <span className='bg-[#E7FCFA] text-[#054943] h-[36px] w-[36px] text-[16px] flex items-center justify-center' >{icon}</span>
       <span className='text-[16px] text-[#054943] font-semibold'>{category}</span>
@@ -66,10 +66,10 @@ export default function Article() {
     <div className='w-full bg-[#FFFFFF]'>
       <div className='container flex flex-col items-center mx-auto py-20 px-10'>
         <h1 className='fontCreateRound text-[32px]'>Quick Self Care</h1>
-        <p className='text-[18px] mb-8'>
+        <p className='text-[18px] mb-8 py-1 sm:text-center'>
             Curated articles and exercises to help you navigate difficult moments.
         </p>
-        <div className='w-full grid grid-cols-3 gap-[40px]'>
+        <div className='w-full grid lg:grid-cols-3 gap-[40px]'>
           {data.map((dt, index) => (
             <Card key={index} icon={dt.icon} category={dt.category} heading={dt.heading} subHeading={dt.subHeading} />
           ))}

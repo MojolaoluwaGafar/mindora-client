@@ -28,7 +28,7 @@ export default function ChatPage() {
   return (
     <div className='w-full'>
         <div className="container mx-auto flex flex-col items-center">
-            <div className='flex items-center justify-between w-full border-b border-[#F3F2F2] py-[24px] px-10'>
+            <div className='flex items-center justify-between w-full border-b border-[#F3F2F2] py-[24px] px-5 lg:px-10'>
             <Link to="/"><img className="w-[149px]" src={Logo} alt="" /></Link>
             <button
              onClick={handleEndChat}
@@ -39,16 +39,16 @@ export default function ChatPage() {
 
             <div className="bg-[#EDF8F7] w-full h-[458px] flex flex-col justify-center">
                 {messages.length === 0 ? (
-                    <div className="bg-white border border-[#C8CCCC] rounded-[28px] h-[156px] w-lg lg:w-[747px] flex flex-col items-center justify-center mx-auto">
-                        <h1 className="fontCreateRound text-[32px] text-[#000000]">Hi, I'm Mindora.</h1>
-                        <p className="text-[#747272] fontDMSans text-[18px]">
+                    <div className="bg-white border border-[#C8CCCC] rounded-[28px] h-[156px] w-xs lg:w-[747px] flex flex-col items-center justify-center mx-auto">
+                        <h1 className="fontCreateRound text-2xl lg:text-[32px] text-[#000000]">Hi, I'm Mindora.</h1>
+                        <p className="text-[#747272] fontDMSans lg:text-[18px] py-1 text-center">
                             Tell me how you're feeling. I'm here, and this is private.
                         </p>
                     </div>
                     ) : (
                     <div className="flex-1 overflow-y-auto px-10 pt-14 pb-8 space-y-8">
                         {messages.map((msg, idx) => (
-                            <div key={idx} className={`p-4 rounded-2xl w-fit max-w-[70%] shadow fontDMSans ${msg.sender === "user"
+                            <div key={idx} className={`p-4 rounded-2xl w-fit max-w-[90%] shadow fontDMSans ${msg.sender === "user"
                                 ? "bg-[#0D9488] ml-auto rounded-t-[40px] rounded-bl-[40px] rounded-br-[7px] text-white text-right"
                                 : "bg-[#FFFFFF] border border-[#C8CCCC] text-gray-800"
                         }`}>{msg.text}
@@ -60,26 +60,29 @@ export default function ChatPage() {
 
 
        {messages.length === 0 && (
-        <div className="flex flex-wrap gap-8 px-6 py-10">
+        <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 px-4 lg:px-6 py-6 lg:py-10">
           {["I feel anxious", "I need support", "I can’t sleep", "I’m overwhelmed with work"].map((text) => (
             <button
             type='button'
             key={text}
             onClick={() => setInput(text)}
-            className="bg-[#FAFAFA] border border-[#C8CCCC] rounded-full px-6 py-2 text-[#0A1916] text-[18px] hover:bg-gray-100 fontDMSans font-semibold">
+            className="bg-[#FAFAFA] border border-[#C8CCCC] rounded-full px-4 lg:px-6 py-2 text-[#0A1916] text-[16px] lg:text-[18px] hover:bg-gray-100 fontDMSans font-semibold">
               {text}
             </button>
           ))}
         </div>
       )}
 
-      <div className="w-[80%] relative mt-15 mb-5 ">
+      <div className="w-[90%] lg:w-[80%] relative mt-5 lg:mt-15 mb-5 ">
         <form onSubmit={handleSend}>
         <input type="text" value={input} 
         onChange={(e) => setInput(e.target.value)}
         placeholder="Share what’s on your mind..."
-        className="border border-[#C8CCCC] rounded-[50px] h-[79px] w-full px-6 pr-20 fontDMSans " />
-        <button type="submit" className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#0D9488] text-white rounded-full w-[55px] h-[55px] flex items-center justify-center">
+        className="border border-[#C8CCCC] rounded-[50px] h-[50px] lg:h-[79px] w-full px-6 pr-20 fontDMSans" />
+        <button type="submit" className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#0D9488] text-white rounded-full lg:hidden w-[30px] h-[30px] flex items-center justify-center">
+        <ArrowUp size={20} />
+        </button>
+        <button type="submit" className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#0D9488] text-white rounded-full hidden w-[55px] h-[55px] lg:flex items-center justify-center">
         <ArrowUp size={30} />
         </button>
         </form>
@@ -87,7 +90,7 @@ export default function ChatPage() {
         {loading && <p className="text-center text-gray-500">Thinking...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
 
-      <p className='text-center text-[#747272] text-[14px]'>Mindora is an AI companion, not a substitute for professional care.</p>
+      <p className='text-center text-[#747272] lg:text-[14px]'>Mindora is an AI companion, not a substitute for professional care.</p>
         </div>
     </div>
   )

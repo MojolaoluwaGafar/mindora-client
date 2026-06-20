@@ -6,7 +6,7 @@ interface CardProp {
 
 const Card = ({ id, heading, subHeading }: CardProp) => {
   return (
-    <div className='bg-[#FFFFFF] rounded-[20px] w-[395px] h-[225px] flex flex-col items-center justify-between px-[23px] py-[26px]'>
+    <div className='bg-[#FFFFFF] rounded-[20px] lg:w-[395px] h-[225px] flex flex-col items-center justify-between px-[23px] py-[26px]'>
       <span className='rounded-full bg-[#0D9488] h-[55px] w-[55px] flex items-center justify-center text-white fontDMSans text-lg'>
         {id}
       </span>
@@ -37,12 +37,12 @@ export default function HowItIsWorks() {
 
   return (
     <div id='how' className='w-full bg-[#0D9488]'>
-      <div className='container flex flex-col items-center mx-auto py-20 px-10'>
+      <div className='container flex flex-col items-center mx-auto py-20 px-5 lg:px-10'>
         <h1 className='fontCreateRound text-white text-[32px]'>How Mindora Works</h1>
-        <p className='text-[18px] text-[#E6E4E4] mb-8'>
+        <p className='text-[18px] text-[#E6E4E4] mb-8 text-center'>
           Three simple steps to get the support you need.
         </p>
-        <div className='flex w-full gap-[40px]'>
+        <div className='grid gap-5 lg:flex w-full lg:gap-[40px]'>
           {data.map((dt) => (
             <Card key={dt.id} id={dt.id} heading={dt.heading} subHeading={dt.subHeading} />
           ))}
