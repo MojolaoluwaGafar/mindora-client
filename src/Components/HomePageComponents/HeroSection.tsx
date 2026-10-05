@@ -1,4 +1,4 @@
-import heroImg from "../../assets/Frame 2121454976.png"
+import heroImg from "../../assets/hero-chat.png"
 import { Link } from "react-router"
 
 export default function HeroSection() {
@@ -15,7 +15,7 @@ export default function HeroSection() {
             <Link to="/talkToMindora"><button className="bg-[#0D9488] rounded-[31px] text-white w-[267px] h-[55px] fontDMSans" type="button">Start Anonymous Chat</button></Link>
         </div>
 
-        <img className="hidden lg:flex" src={heroImg} alt="" />
+        <img className="hidden lg:flex" src={heroImg} alt="Mindora chat preview" />
        </div>
     </div>
   )

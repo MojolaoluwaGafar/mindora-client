@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Mindora — Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mindora is an AI companion for talking through what's on your mind. You open the chat and type how you're feeling, and Mindora replies in a calm, supportive way. Messages that suggest self-harm get an immediate pointer to real-world help instead of an AI reply.
 
-Currently, two official plugins are available:
+> Mindora is an AI companion, not a substitute for professional care.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live:** https://mindora-client-two.vercel.app
+**Backend:** [Mindora-server](https://github.com/MojolaoluwaGafar/Mindora-server)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Streaming replies.** Text appears as it's generated, and replies render as markdown (lists, bold, links).
+- **Anonymous chat.** A random session ID is stored in `localStorage` and sent as the `x-session-id` header, so there's no sign-up.
+- **Conversation restore.** A refreshed page reloads the conversation, which the server keeps for 1 hour. "End Chat" deletes it from the server immediately.
+- **Safety UI.** Crisis messages show a helpline card (emergency numbers, 988, Samaritans, findahelpline.com). Concerning messages show a link to `/resources`.
+- **Cold-start handling.** The homepage pings the server so it starts waking up early. If a reply takes more than 8 seconds, the chat shows a "waking up" note.
+- **Pages:** Home, Chat (`/talkToMindora`), Resources (`/resources`) and Privacy (`/privacy`).
+- **Responsive, accessible layout.** The chat fills the screen, and the page has screen-reader labels, live regions and alt text.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React 19 · TypeScript · Vite · Tailwind CSS v4 · React Router · react-markdown · Axios · Lucide icons. Deployed on Vercel, with CI on GitHub Actions (lint + build).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env   # or create .env by hand, see below
+npm run dev            # http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Variable        | Description                              | Example                                |
+| --------------- | ---------------------------------------- | -------------------------------------- |
+| `VITE_BASE_URL` | Base URL of the Mindora backend          | `http://localhost:5000` or `https://mindora-server.onrender.com` |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Scripts
+
+| Command           | What it does                    |
+| ----------------- | ------------------------------- |
+| `npm run dev`     | Start the dev server            |
+| `npm run build`   | Type-check and build to `dist/` |
+| `npm run preview` | Serve the production build      |
+| `npm run lint`    | Run ESLint                      |
+
+## Project structure
+
 ```
+src/
+  API/          API client: streaming chat, history, end session, warm-up
+  Hook/useChat  Chat state, streaming, history restore
+  Pages/        HomePage, ChatPage, ResourcesPage, PrivacyPage, Error404
+  Components/   Landing-page sections, AIMessage (markdown), CrisisResources
+```
+
+## Deployment
+
+The app is deployed on Vercel. `vercel.json` rewrites every route to `index.html`, so client-side routes like `/talkToMindora` work on refresh. Set `VITE_BASE_URL` in the Vercel project settings.
+
+Note: the backend runs on Render's free tier, so the first message after a quiet period can take up to a minute while the server wakes up.

@@ -1,10 +1,10 @@
-import img from "../../assets/6af8d428e3af3bd910a1a0e7f5cf6384458e3511 (1).jpg"
+import img from "../../assets/about.jpg"
 
 export default function About() {
   return (
     <div id='about' className="w-full py-20 px-5 lg:px-10">
       <div className='container mx-auto flex flex-col lg:flex-row items-center justify-between gap-[73px]'>
-        <img src={img} alt="illustration" className="w-[458px] h-[291px] rounded-lg" />
+        <img src={img} alt="A person talking through their feelings" className="w-[458px] h-[291px] rounded-lg" />
 
       <div className="w-full lg:w-1/2">
         <h1 className="text-4xl lg:text-2xl font-bold mb-4 fontCreateRound">About Mindora</h1>

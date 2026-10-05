@@ -11,10 +11,10 @@ export default function Header() {
   return (
     <div className='bg-white w-full h-[103px] py-[24px] px-5 lg:px-10 fontDMSans border-b border-[#F3F2F2]'>
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/"><img className="w-[149px]" src={Logo} alt="" /></Link>
+          <Link to="/"><img className="w-[149px]" src={Logo} alt="Mindora home" /></Link>
             <div className='hidden lg:flex items-center justify-between gap-10'>
-            <a href="#about">About</a>
-            <a href="#how">How It Works</a>
+            <a href="/#about">About</a>
+            <a href="/#how">How It Works</a>
             <Link to="/resources"><p>Resources</p></Link>
             <Link to="/privacy"><p>Privacy</p></Link>
             </div>
